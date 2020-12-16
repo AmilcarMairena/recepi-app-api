@@ -61,3 +61,14 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(ingredient), ingredient.name)
+
+    def test_recepi_str(self):
+        """Test the recepi string representation"""
+        recepi = models.Recepi.objects.create(
+            user = sample_user(),
+            title='Steak and mishroon souce',
+            time_minutes=5,
+            price=5.00
+        )
+
+        self.assertEqual(str(recepi), recepi.title)
